@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Add New Student</title>
+    </h:head>
+    
+    <h:body>
+        <h:form id="newCustomerForm">
+            <h3>Add New Student</h3>
+            <h:panelGrid columns="3">
+                <h:outputText value="Name:"/>
+                <h:inputText id="clientName" value="#{newStudentBean.studentFirstName}" required="true"/>
+                <h:message for="clientName"/>
+                
+                <h:outputText value="Surname:"/>
+                <h:inputText id="clientSurname" value="#{newStudentBean.studentLastName}" required="true"/>
+                <h:message for="clientSurname"/>
+
+            </h:panelGrid>
+            <h:commandButton action="#{newStudentBean.save()}" value="Add"/>
+        </h:form>
+    </h:body>
+</html>
