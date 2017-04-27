@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" template="sablonas.xhtml">
+
+	<ui:define name="turinys">
+		<h:form>
+			<p:messages id="messages" showDetail="false" autoUpdate="true"
+				closable="true" />
+			<p:dataTable value="#{invoicesPageBean.invoiceList}" var="invoice"
+				rowKey="invoice.id">
+				<p:column headerText="Number">
+					<h:outputText value="#{invoice.number}" />
+				</p:column>
+				<p:column headerText="Date">
+					<h:outputText value="#{invoice.date}" />
+				</p:column>
+				<p:column headerText="Company">
+					<h:outputText value="#{invoice.company}" />
+				</p:column>
+				<p:column headerText="Recipient">
+					<h:outputText value="#{invoice.recipient}" />
+				</p:column>
+				<p:column headerText="Total price">
+					<h:outputText value="#{invoice.totalPrice}" />
+				</p:column>
+				<p:column headerText="Items">
+					<h:dataTable value="#{invoice.items}" var="item" border="0">
+						<h:column>
+		  						#{item.title}
+	  					</h:column>
+					</h:dataTable>
+				</p:column>
+				<p:column headerText="Options">
+					<h:commandButton value="View"
+						action="#{invoicesPageBean.showViewPage(invoice)}" />
+					<h:commandButton value="Add Item"
+						action="#{invoicesPageBean.showAddItemPage(invoice)}" />
+					<h:commandButton value="Delete"
+						action="#{invoicesPageBean.deleteSelected(invoice)}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

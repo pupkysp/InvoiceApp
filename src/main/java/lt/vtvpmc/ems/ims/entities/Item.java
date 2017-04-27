@@ -3,10 +3,65 @@ package lt.vtvpmc.ems.ims.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-public class Item implements Serializable{
+@Table(name = "item")
+public class Item implements Serializable {
 
 	private static final long serialVersionUID = -3994013865628704099L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private long id;
+
+	@NotNull
+	@NotBlank
+	private String title;
+	private int amount;
+	private double price;
+	
+	public Item(){
+		
+	}
+	//ar turi buti konstruktorius?
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
 
 }

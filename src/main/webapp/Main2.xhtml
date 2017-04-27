@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Invoice Management System</title>
+	<h:outputStylesheet name="style.css" library="css" />
+</h:head>
+<h:body>
+	<div id="logo">
+		<img src="http://freightinthecity.com/wp-content/uploads/2015/08/IMS-logo-300x225.png" />
+		<h:form>
+			<p:button value="Create new invoice" outcome="create-invoices" icon="ui-icon-document" />
+			<p:button value="Show invoices list" outcome="show-invoices" icon="ui-icon-folder-open" />
+		</h:form>
+	</div>
+</h:body>
+</html>
