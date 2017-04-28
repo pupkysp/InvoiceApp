@@ -2,14 +2,19 @@ package lt.vtvpmc.ems.ims.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
+
+import lt.vtvpmc.ems.ims.entities.Invoice;
 
 @Entity
 @Table(name = "item")
@@ -24,13 +29,16 @@ public class Item implements Serializable {
 	@NotNull
 	@NotBlank
 	private String title;
+
 	private int amount;
 	private double price;
-	
-	public Item(){
-		
+
+	@JoinColumn(name = "invoice_id")
+	@ManyToOne(optional = true, cascade = { CascadeType.ALL })
+	private Invoice invoice;
+
+	public Item() {
 	}
-	//ar turi buti konstruktorius?
 
 	public long getId() {
 		return id;
@@ -64,4 +72,11 @@ public class Item implements Serializable {
 		this.price = price;
 	}
 
+	public Invoice getInvoice() {
+		return invoice;
+	}
+
+	public void setInvoice(Invoice invoice) {
+		this.invoice = invoice;
+	}
 }

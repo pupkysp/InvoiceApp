@@ -15,7 +15,7 @@ import lt.vtvpmc.ems.ims.repositories.InvoiceRepo;
 public class NewInvoiceBean {
 
 	@Autowired
-	InvoiceRepo invoiceRepo;
+	private InvoiceRepo invoiceRepo;
 
 	@Autowired
 	private InvoiceModel invoiceModel;

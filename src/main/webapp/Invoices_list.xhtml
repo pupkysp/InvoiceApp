@@ -26,9 +26,9 @@
 					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Items">
-					<h:dataTable value="#" var="item" border="0">
+					<h:dataTable value="#{invoice.items}" var="item" border="0">
 						<h:column>
-		  					
+		  					#{item.title}
 	  					</h:column>
 					</h:dataTable>
 				</p:column>
@@ -36,7 +36,7 @@
 					<h:commandButton value="View"
 						action="#" />
 					<h:commandButton value="Add Item"
-						action="#" />
+						action="#{newItemBean.create()}" />
 					<h:commandButton value="Delete"
 						action="#" />
 				</p:column>
