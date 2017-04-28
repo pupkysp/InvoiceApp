@@ -10,29 +10,29 @@
 				<h:panelGrid id="grid" columns="3" cellpadding="5">
 					<h:outputLabel for="invoice_number" value="Invoice number"></h:outputLabel>
 					<h:inputText id="invoice_number"
-						value="#{invoicesPageData.newInvoice.number}">
+						value="#{invoiceModel.currentInvoice.number}">
 						<f:validateBean />
 					</h:inputText>
 					<p:message for="invoice_number" />
 					<h:outputLabel for="invoice_date" value="Invoice date"></h:outputLabel>
 					<h:inputText id="invoice_date"
-						value="#{invoicesPageData.newInvoice.date}">
+						value="#{invoiceModel.currentInvoice.date}">
 						<f:convertDateTime pattern="yyyy-MM-dd" />
 					</h:inputText>
 					<p:message for="invoice_date" />
 					<h:outputLabel for="company" value="Company"></h:outputLabel>
 					<h:inputText id="company"
-						value="#{invoicesPageData.newInvoice.company}">
+						value="#{invoiceModel.currentInvoice.company}">
 					</h:inputText>
 					<p:message for="company" />
 					<h:outputLabel for="recipient" value="Recipient"></h:outputLabel>
 					<h:inputText id="recipient"
-						value="#{invoicesPageData.newInvoice.recipient}">
+						value="#{invoiceModel.currentInvoice.recipient}">
 					</h:inputText>
 					<p:message for="recipient" />
 				</h:panelGrid>
 			</p:panel>
-			<h:commandButton action="#{invoicesPageBean.addNew}" value="Add new"
+			<h:commandButton action="#{newInvoiceBean.save()}" value="Add new"
 				update="grid"></h:commandButton>
 		</h:form>
 	</ui:define>

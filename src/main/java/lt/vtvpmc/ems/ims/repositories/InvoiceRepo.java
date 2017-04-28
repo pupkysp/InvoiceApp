@@ -1,9 +1,9 @@
 package lt.vtvpmc.ems.ims.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import lt.vtvpmc.ems.ims.entities.Invoice;
 
-public interface InvoiceRepo extends CrudRepository<Invoice, Long>{
+public interface InvoiceRepo extends JpaRepository<Invoice, Long>{
 
 }

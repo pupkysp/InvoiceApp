@@ -12,5 +12,98 @@
         </locale-config>
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
     </application>
+    <!-- 
+    <navigation-rule>
+		<from-view-id>/invoices.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-add-item</from-outcome>
+			<to-view-id>/itemPage.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>list-invoices</from-outcome>
+			<to-view-id>/invoices.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>add-invoice</from-outcome>
+			<to-view-id>/addNewInvoice.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>list-invoices</from-outcome>
+			<to-view-id>/invoices.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>show-view-page</from-outcome>
+			<to-view-id>/view.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/itemPage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list-invoices</from-outcome>
+			<to-view-id>/invoices.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/view.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-add-item</from-outcome>
+			<to-view-id>/itemPage.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/itemPage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-add-item</from-outcome>
+			<to-view-id>/itemPage.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	 -->
+	<navigation-rule>
+		<from-view-id>/main.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>create-invoices</from-outcome>
+			<to-view-id>/Create_Invoices.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/main.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-invoices</from-outcome>
+			<to-view-id>/Invoices_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/Create_Invoices.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>main</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+    
     
 </faces-config>

@@ -8,22 +8,22 @@
 		<h:form>
 			<p:messages id="messages" showDetail="false" autoUpdate="true"
 				closable="true" />
-			<p:dataTable value="#{itemsPageB.itemList}" var="item">
+			<p:dataTable value="#" var="item">
 				<f:facet name="header">
 					<h:outputText
-						value="Invoice number : #{invoicesPageBean.data.currentInvoice.number}" />
+						value="Invoice number : #" />
 				</f:facet>
 				<p:column headerText="Title">
-					<h:outputText value="#{item.title}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Amount">
-					<h:outputText value="#{item.amount}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Price">
-					<h:outputText value="#{item.price}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Total price">
-					<h:outputText value="#{item.totalPrice}" />
+					<h:outputText value="#" />
 				</p:column>
 			</p:dataTable>
 		</h:form>

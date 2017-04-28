@@ -9,27 +9,27 @@
 		<h:form>
 			<p:messages id="messages" showDetail="false" autoUpdate="true"
 				closable="true" />
-			<p:dataTable value="#{itemsPageB.itemList}" var="item" rowkey="item.id">
+			<p:dataTable value="#" var="item" rowkey="item.id">
 				<f:facet name="header">
 					<h:outputText
-						value="Invoice number : #{invoicesPageBean.data.currentInvoice.number}" />
+						value="Invoice number : #" />
 				</f:facet>
 				<p:column headerText="Title">
-					<h:outputText value="#{item.title}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Amount">
-					<h:outputText value="#{item.amount}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Unit Price">
-					<h:outputText value="#{item.price}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Total price">
-					<h:outputText value="#{item.totalPrice}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column>
 					<h:commandButton value="Delete"
-						action="#{itemsPageB.deleteSelected(item)}" />
-					 <h:commandButton value="Edit" action="#{itemsPageB.addNew}" />  
+						action="#" />
+					 <h:commandButton value="Edit" action="#" />  
 				</p:column>
 			</p:dataTable>
 		</h:form>
@@ -39,20 +39,20 @@
 			<p:panel id="basic" header="Item details" style="margin-bottom:20px">
 				<h:panelGrid id="grid" columns="3" cellpadding="5">
 					<h:outputLabel for="itemTitle" value="Item title"></h:outputLabel>
-					<h:inputText id="itemTitle" value="#{itemsPageB.newItem.title}">
+					<h:inputText id="itemTitle" value="#">
 						<f:validateBean />
 					</h:inputText>
 					<p:message for="itemTitle" />
 					<h:outputLabel for="amount" value="Amount"></h:outputLabel>
-					<h:inputText id="amount" value="#{itemsPageB.newItem.amount}">
+					<h:inputText id="amount" value="#">
 					</h:inputText>
 					<p:message for="amount" />
 					<h:outputLabel for="price" value="Price"></h:outputLabel>
-					<h:inputText id="price" value="#{itemsPageB.newItem.price}">
+					<h:inputText id="price" value="#">
 					</h:inputText>
 					<p:message for="price" />
 				</h:panelGrid>
-				<h:commandButton action="#{itemsPageB.addNew}" value="Add new"></h:commandButton>
+				<h:commandButton action="#" value="Add new"></h:commandButton>
 				<h:commandButton action="show-invoices" value="Cancel"></h:commandButton>
 			</p:panel>
 		</h:form>

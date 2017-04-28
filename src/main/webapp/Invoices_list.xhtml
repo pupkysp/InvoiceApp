@@ -8,7 +8,7 @@
 		<h:form>
 			<p:messages id="messages" showDetail="false" autoUpdate="true"
 				closable="true" />
-			<p:dataTable value="#{invoicesPageBean.invoiceList}" var="invoice"
+			<p:dataTable value="#{newInvoiceBean.invoiceList}" var="invoice"
 				rowKey="invoice.id">
 				<p:column headerText="Number">
 					<h:outputText value="#{invoice.number}" />
@@ -23,22 +23,22 @@
 					<h:outputText value="#{invoice.recipient}" />
 				</p:column>
 				<p:column headerText="Total price">
-					<h:outputText value="#{invoice.totalPrice}" />
+					<h:outputText value="#" />
 				</p:column>
 				<p:column headerText="Items">
-					<h:dataTable value="#{invoice.items}" var="item" border="0">
+					<h:dataTable value="#" var="item" border="0">
 						<h:column>
-		  						#{item.title}
+		  					
 	  					</h:column>
 					</h:dataTable>
 				</p:column>
 				<p:column headerText="Options">
 					<h:commandButton value="View"
-						action="#{invoicesPageBean.showViewPage(invoice)}" />
+						action="#" />
 					<h:commandButton value="Add Item"
-						action="#{invoicesPageBean.showAddItemPage(invoice)}" />
+						action="#" />
 					<h:commandButton value="Delete"
-						action="#{invoicesPageBean.deleteSelected(invoice)}" />
+						action="#" />
 				</p:column>
 			</p:dataTable>
 		</h:form>
