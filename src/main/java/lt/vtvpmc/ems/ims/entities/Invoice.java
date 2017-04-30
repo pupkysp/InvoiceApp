@@ -1,6 +1,7 @@
 package lt.vtvpmc.ems.ims.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -25,7 +27,8 @@ public class Invoice implements Serializable {
 	private static final long serialVersionUID = -5751780213438270315L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name="Invoice",sequenceName="oracle_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator="Invoice")
 	private long id;
 
 	@NotNull
@@ -43,6 +46,31 @@ public class Invoice implements Serializable {
 	public Invoice() {
 	}
 
+	public void addItem(Item item) {
+
+		if (getItems() == null) {
+			setItems(new ArrayList<Item>());
+		}
+		if (!getItems().contains(item)) {
+			getItems().add(item);
+		}
+	}
+	
+	public void removeItem(Item item) {
+
+		if (getItems().contains(item)) {
+			getItems().remove(item);
+		}
+	}
+	
+	public double getTotalPrice() {
+		double price = 0;
+		for (Item i : this.items) {
+			price += i.getTotalPrice();
+		}
+		return price;
+	}
+	
 	public long getId() {
 		return id;
 	}

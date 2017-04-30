@@ -48,5 +48,41 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/itemPage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-invoices</from-outcome>
+			<to-view-id>/Invoices_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/Invoices_list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-item-view</from-outcome>
+			<to-view-id>/item_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/Invoices_list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-invoices</from-outcome>
+			<to-view-id>/Invoices_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/itemPage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>show-item-page</from-outcome>
+			<to-view-id>/itemPage.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
     
 </faces-config>

@@ -21,21 +21,32 @@ public class NewItemBean {
 
 	@Autowired
 	private ItemModel itemModel;
-	
+
 	@Autowired
 	private InvoiceRepo invoiceRepo;
-	
+
 	@Autowired
 	private InvoiceModel invoiceModel;
 
-	public String save(){
-		itemRepo.save(itemModel.getCurrentItem());
-		return "";
+	public String create() {
+		itemModel.getCurrentItem().setInvoice(invoiceModel.getCurrentInvoice());
+		invoiceModel.getCurrentInvoice().addItem(itemModel.getCurrentItem());
+		invoiceRepo.save(invoiceModel.getCurrentInvoice());
+		return "show-invoices";
 	}
-	public String create(){
-		itemModel.setCurrentItem(new Item());
+	
+	public String editItem(Item item) {
+		itemModel.setCurrentItem(item);
 		return "show-item-page";
 	}
+
+	public void deleteSelectedItem(Item item) {
+		itemModel.setCurrentItem(item);
+		invoiceModel.getCurrentInvoice().removeItem(item);
+		itemRepo.delete(itemModel.getCurrentItem());
+		itemModel.setCurrentItem(new Item());
+	}
+
 	public ItemRepo getItemRepo() {
 		return itemRepo;
 	}
@@ -51,9 +62,9 @@ public class NewItemBean {
 	public void setItemModel(ItemModel itemModel) {
 		this.itemModel = itemModel;
 	}
-	
-	public List<Item> getItemList(){
-		return itemRepo.findAll();
+
+	public List<Item> getItemList() {
+		return invoiceModel.getCurrentInvoice().getItems();
 	}
 
 }

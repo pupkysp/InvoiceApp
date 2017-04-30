@@ -7,7 +7,9 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import lt.vtvpmc.ems.ims.entities.Invoice;
+import lt.vtvpmc.ems.ims.entities.Item;
 import lt.vtvpmc.ems.ims.models.InvoiceModel;
+import lt.vtvpmc.ems.ims.models.ItemModel;
 import lt.vtvpmc.ems.ims.repositories.InvoiceRepo;
 
 @Controller
@@ -20,6 +22,9 @@ public class NewInvoiceBean {
 	@Autowired
 	private InvoiceModel invoiceModel;
 
+	@Autowired
+	private ItemModel itemModel;
+
 	public String save() {
 		invoiceRepo.save(invoiceModel.getCurrentInvoice());
 		return "main";
@@ -30,8 +35,24 @@ public class NewInvoiceBean {
 		return "create-invoices";
 	}
 
+	public String addNewItem(Invoice invoice) {
+		itemModel.setCurrentItem(new Item());
+		invoiceModel.setCurrentInvoice(invoice);
+		return "show-item-page";
+	}
+
 	public String showInvoiceList() {
-		
+		return "show-invoices";
+	}
+	
+	public String showItemList(Invoice invoice){
+		invoiceModel.setCurrentInvoice(invoice);
+		return "show-item-view";
+	}
+	
+	public String deleteSelectedInvoice(Invoice invoice){
+		invoiceModel.setCurrentInvoice(invoice);
+		invoiceRepo.delete(invoiceModel.getCurrentInvoice());
 		return "show-invoices";
 	}
 

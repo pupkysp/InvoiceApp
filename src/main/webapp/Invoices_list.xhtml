@@ -23,7 +23,7 @@
 					<h:outputText value="#{invoice.recipient}" />
 				</p:column>
 				<p:column headerText="Total price">
-					<h:outputText value="#" />
+					<h:outputText value="#{invoice.totalPrice} &#8364;" />
 				</p:column>
 				<p:column headerText="Items">
 					<h:dataTable value="#{invoice.items}" var="item" border="0">
@@ -34,11 +34,11 @@
 				</p:column>
 				<p:column headerText="Options">
 					<h:commandButton value="View"
-						action="#" />
+						action="#{newInvoiceBean.showItemList(invoice)}" />
 					<h:commandButton value="Add Item"
-						action="#{newItemBean.create()}" />
+						action="#{newInvoiceBean.addNewItem(invoice)}" />
 					<h:commandButton value="Delete"
-						action="#" />
+						action="#{newInvoiceBean.deleteSelectedInvoice(invoice)}" />
 				</p:column>
 			</p:dataTable>
 		</h:form>

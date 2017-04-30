@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -23,7 +24,8 @@ public class Item implements Serializable {
 	private static final long serialVersionUID = -3994013865628704099L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name="Item",sequenceName="oracle_seq") 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Item")
 	private long id;
 
 	@NotNull
@@ -34,12 +36,16 @@ public class Item implements Serializable {
 	private double price;
 
 	@JoinColumn(name = "invoice_id")
-	@ManyToOne(optional = true, cascade = { CascadeType.ALL })
+	@ManyToOne(optional = true, cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private Invoice invoice;
 
 	public Item() {
 	}
 
+	public double getTotalPrice(){
+		return amount * price;
+	}
+	
 	public long getId() {
 		return id;
 	}

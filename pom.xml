@@ -207,8 +207,25 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<!-- primefaces themes -->
+		<dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+			<scope>compile</scope>
+		</dependency>
 
 	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>pf-themes</id>
+			<name>Primefacesthemes</name>
+			<url>http://repository.primefaces.org/</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
 
 	<build>
 		<plugins>

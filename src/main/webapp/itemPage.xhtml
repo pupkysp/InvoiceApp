@@ -21,15 +21,15 @@
 					<h:outputText value="#{item.amount}" />
 				</p:column>
 				<p:column headerText="Unit Price">
-					<h:outputText value="#{item.price}" />
+					<h:outputText value="#{item.price} &#8364;" />
 				</p:column>
 				<p:column headerText="Total price">
-					<h:outputText value="#" />
+					<h:outputText value="#{item.totalPrice} &#8364;" />
 				</p:column>
 				<p:column>
 					<h:commandButton value="Delete"
-						action="#" />
-					 <h:commandButton value="Edit" action="#" />  
+						action="#{newItemBean.deleteSelectedItem(item)}" />
+					 <h:commandButton value="Edit" action="#{newItemBean.editItem(item)}" />  
 				</p:column>
 			</p:dataTable>
 		</h:form>
@@ -52,8 +52,7 @@
 					</h:inputText>
 					<p:message for="price" />
 				</h:panelGrid>
-				<h:commandButton action="#{newItemBean.save()}" value="Add new"></h:commandButton>
-				<h:commandButton action="show-invoices" value="Cancel"></h:commandButton>
+				<h:commandButton action="#{newItemBean.create()}" value="Add new"></h:commandButton>
 			</p:panel>
 		</h:form>
 	</ui:define>
