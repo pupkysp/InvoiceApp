@@ -33,14 +33,24 @@
 					</h:dataTable>
 				</p:column>
 				<p:column headerText="Options">
-					<h:commandButton value="View"
-						action="#{newInvoiceBean.showItemList(invoice)}" />
-						<h:commandButton value="Edit"
-						action="#{newInvoiceBean.editInvoice(invoice)}" />
-					<h:commandButton value="Add Item"
-						action="#{newInvoiceBean.addNewItem(invoice)}" />
-					<h:commandButton value="Delete"
-						action="#{newInvoiceBean.deleteSelectedInvoice(invoice)}" />
+					<p:commandButton value="View"
+						action="#{newInvoiceBean.showItemList(invoice)}" update="@form"/>
+					<p:commandButton value="Edit"
+						action="#{newInvoiceBean.editInvoice(invoice)}" update="@form"/>
+					<p:commandButton value="Add Item"
+						action="#{newInvoiceBean.addNewItem(invoice)}" update="@form"/>
+					<p:commandButton value="Delete"
+						action="#{newInvoiceBean.deleteSelectedInvoice(invoice)}" update="@form">
+						<p:confirm header="Confirmation" message="Are you sure?"
+							icon="ui-icon-alert" />
+					</p:commandButton>
+
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+						<p:commandButton value="Yes" type="button"
+							styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+						<p:commandButton value="No" type="button"
+							styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+					</p:confirmDialog>
 				</p:column>
 			</p:dataTable>
 		</h:form>
