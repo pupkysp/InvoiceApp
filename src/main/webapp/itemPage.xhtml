@@ -49,17 +49,17 @@
 			<p:panel id="basic" header="Item details" style="margin-bottom:20px">
 				<h:panelGrid id="grid" columns="3" cellpadding="5">
 					<h:outputLabel for="itemTitle" value="Item title"></h:outputLabel>
-					<h:inputText id="itemTitle" value="#{itemModel.currentItem.title}">
+					<p:inputText id="itemTitle" value="#{itemModel.currentItem.title}">
 						<f:validateBean />
-					</h:inputText>
+					</p:inputText>
 					<p:message for="itemTitle" />
 					<h:outputLabel for="amount" value="Amount"></h:outputLabel>
-					<h:inputText id="amount" value="#{itemModel.currentItem.amount}">
-					</h:inputText>
+					<p:inputText id="amount" value="#{itemModel.currentItem.amount}">
+					</p:inputText>
 					<p:message for="amount" />
 					<h:outputLabel for="price" value="Price"></h:outputLabel>
-					<h:inputText id="price" value="#{itemModel.currentItem.price}">
-					</h:inputText>
+					<p:inputText id="price" value="#{itemModel.currentItem.price}">
+					</p:inputText>
 					<p:message for="price" />
 				</h:panelGrid>
 				<p:commandButton action="#{newItemBean.create()}" value="Add new"

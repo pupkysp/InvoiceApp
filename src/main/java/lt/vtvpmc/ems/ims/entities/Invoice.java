@@ -34,7 +34,7 @@ public class Invoice implements Serializable {
 	@NotNull
 	private long number;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date date;
 
 	private String company;

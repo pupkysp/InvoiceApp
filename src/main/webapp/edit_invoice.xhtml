@@ -9,26 +9,24 @@
 			<p:panel id="basic" header="Invoice" style="margin-bottom:20px">
 				<h:panelGrid id="grid" columns="3" cellpadding="5">
 					<h:outputLabel for="invoice_number" value="Invoice number"></h:outputLabel>
-					<h:inputText id="invoice_number"
+					<p:inputText id="invoice_number"
 						value="#{invoiceModel.currentInvoice.number}">
 						<f:validateBean />
-					</h:inputText>
+					</p:inputText>
 					<p:message for="invoice_number" />
 					<h:outputLabel for="invoice_date" value="Invoice date"></h:outputLabel>
-					<h:inputText id="invoice_date"
-						value="#{invoiceModel.currentInvoice.date}">
-						<f:convertDateTime pattern="yyyy-MM-dd" />
-					</h:inputText>
+					<p:calendar id="invoice_date" pattern="yyyy-MM-dd" navigator="true" mask="9999-99-99"
+						value="#{invoiceModel.currentInvoice.date}" />
 					<p:message for="invoice_date" />
 					<h:outputLabel for="company" value="Company"></h:outputLabel>
-					<h:inputText id="company"
+					<p:inputText id="company"
 						value="#{invoiceModel.currentInvoice.company}">
-					</h:inputText>
+					</p:inputText>
 					<p:message for="company" />
 					<h:outputLabel for="recipient" value="Recipient"></h:outputLabel>
-					<h:inputText id="recipient"
+					<p:inputText id="recipient"
 						value="#{invoiceModel.currentInvoice.recipient}">
-					</h:inputText>
+					</p:inputText>
 					<p:message for="recipient" />
 				</h:panelGrid>
 			</p:panel>
