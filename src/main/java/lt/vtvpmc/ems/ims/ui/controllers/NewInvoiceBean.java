@@ -58,7 +58,7 @@ public class NewInvoiceBean {
 	
 	public String editInvoice(Invoice invoice){
 		invoiceModel.setCurrentInvoice(invoice);
-		return "create-invoices";
+		return "edit-invoice";
 	}
 
 	public InvoiceRepo getInvoiceRepo() {
