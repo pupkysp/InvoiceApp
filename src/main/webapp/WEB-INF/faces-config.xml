@@ -84,5 +84,14 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/Invoices_list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>create-invoices</from-outcome>
+			<to-view-id>/Create_Invoices.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
     
 </faces-config>

@@ -35,6 +35,8 @@
 				<p:column headerText="Options">
 					<h:commandButton value="View"
 						action="#{newInvoiceBean.showItemList(invoice)}" />
+						<h:commandButton value="Edit"
+						action="#{newInvoiceBean.editInvoice(invoice)}" />
 					<h:commandButton value="Add Item"
 						action="#{newInvoiceBean.addNewItem(invoice)}" />
 					<h:commandButton value="Delete"

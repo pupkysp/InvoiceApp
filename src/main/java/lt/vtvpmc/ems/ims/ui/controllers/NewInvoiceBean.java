@@ -55,6 +55,11 @@ public class NewInvoiceBean {
 		invoiceRepo.delete(invoiceModel.getCurrentInvoice());
 		return "show-invoices";
 	}
+	
+	public String editInvoice(Invoice invoice){
+		invoiceModel.setCurrentInvoice(invoice);
+		return "create-invoices";
+	}
 
 	public InvoiceRepo getInvoiceRepo() {
 		return invoiceRepo;
