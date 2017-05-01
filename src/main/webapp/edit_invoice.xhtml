@@ -6,6 +6,9 @@
 
 	<ui:define name="turinys">
 		<h:form>
+			<p:button value="Back" outcome="back"
+				icon="ui-icon-arrowreturnthick-1-w" />
+			<p:button value="Home" outcome="home" icon="ui-icon-home" />
 			<p:panel id="basic" header="Invoice" style="margin-bottom:20px">
 				<h:panelGrid id="grid" columns="3" cellpadding="5">
 					<h:outputLabel for="invoice_number" value="Invoice number"></h:outputLabel>
@@ -15,8 +18,8 @@
 					</p:inputText>
 					<p:message for="invoice_number" />
 					<h:outputLabel for="invoice_date" value="Invoice date"></h:outputLabel>
-					<p:calendar id="invoice_date" pattern="yyyy-MM-dd" navigator="true" mask="9999-99-99"
-						value="#{invoiceModel.currentInvoice.date}" />
+					<p:calendar id="invoice_date" pattern="yyyy-MM-dd" navigator="true"
+						mask="9999-99-99" value="#{invoiceModel.currentInvoice.date}" />
 					<p:message for="invoice_date" />
 					<h:outputLabel for="company" value="Company"></h:outputLabel>
 					<p:inputText id="company"

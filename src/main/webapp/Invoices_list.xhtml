@@ -6,6 +6,7 @@
 
 	<ui:define name="turinys">
 		<h:form>
+		<p:button value="Home" outcome="main" icon="ui-icon-home" />
 			<p:messages id="messages" showDetail="false" autoUpdate="true"
 				closable="true" />
 			<p:dataTable value="#{newInvoiceBean.invoiceList}" var="invoice"
@@ -34,13 +35,14 @@
 				</p:column>
 				<p:column headerText="Options">
 					<p:commandButton value="View"
-						action="#{newInvoiceBean.showItemList(invoice)}" update="@form"/>
+						action="#{newInvoiceBean.showItemList(invoice)}" update="@form" />
 					<p:commandButton value="Edit"
-						action="#{newInvoiceBean.editInvoice(invoice)}" update="@form"/>
+						action="#{newInvoiceBean.editInvoice(invoice)}" update="@form" />
 					<p:commandButton value="Add Item"
-						action="#{newInvoiceBean.addNewItem(invoice)}" update="@form"/>
+						action="#{newInvoiceBean.addNewItem(invoice)}" update="@form" />
 					<p:commandButton value="Delete"
-						action="#{newInvoiceBean.deleteSelectedInvoice(invoice)}" update="@form">
+						action="#{newInvoiceBean.deleteSelectedInvoice(invoice)}"
+						update="@form">
 						<p:confirm header="Confirmation" message="Are you sure?"
 							icon="ui-icon-alert" />
 					</p:commandButton>

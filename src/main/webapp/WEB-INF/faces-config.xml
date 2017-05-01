@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
-    version="2.0">
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
 
-    <application>
-        <locale-config>
-            <default-locale>en</default-locale>
-        </locale-config>
-        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
-    </application>
-   
+	<application>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
+
 	<navigation-rule>
 		<from-view-id>/main.xhtml</from-view-id>
 		<navigation-case>
@@ -21,7 +20,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/main.xhtml</from-view-id>
 		<navigation-case>
@@ -30,7 +29,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/Create_Invoices.xhtml</from-view-id>
 		<navigation-case>
@@ -39,7 +38,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/Invoices_list.xhtml</from-view-id>
 		<navigation-case>
@@ -48,7 +47,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/itemPage.xhtml</from-view-id>
 		<navigation-case>
@@ -57,7 +56,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/Invoices_list.xhtml</from-view-id>
 		<navigation-case>
@@ -66,7 +65,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/Invoices_list.xhtml</from-view-id>
 		<navigation-case>
@@ -75,7 +74,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/itemPage.xhtml</from-view-id>
 		<navigation-case>
@@ -84,7 +83,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/Invoices_list.xhtml</from-view-id>
 		<navigation-case>
@@ -93,7 +92,7 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<from-view-id>/edit_invoice.xhtml</from-view-id>
 		<navigation-case>
@@ -102,5 +101,68 @@
 			<redirect />
 		</navigation-case>
 	</navigation-rule>
-    
+
+	<navigation-rule>
+		<from-view-id>/Invoices_list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/edit_invoice.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/Invoices_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/edit_invoice.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/item_list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/Invoices_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/item_list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/itemPage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/Invoices_list.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/itemPage.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/main.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
 </faces-config>
