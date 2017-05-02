@@ -2,6 +2,7 @@ package lt.vtvpmc.ems.ims.ui.controllers;
 
 import java.util.List;
 
+import org.primefaces.model.chart.BarChartModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,16 @@ public class NewInvoiceBean {
 	@Autowired
 	private ItemModel itemModel;
 
+	@Autowired
+	private ChartView cw;
+
+	public BarChartModel chart(Invoice invoice) {
+		cw = new ChartView();
+		cw.setItemList(invoice.getItems());
+		cw.init();
+		return cw.getBarModel();
+	}
+
 	public String save() {
 		invoiceRepo.save(invoiceModel.getCurrentInvoice());
 		return "main";
@@ -44,19 +55,19 @@ public class NewInvoiceBean {
 	public String showInvoiceList() {
 		return "show-invoices";
 	}
-	
-	public String showItemList(Invoice invoice){
+
+	public String showItemList(Invoice invoice) {
 		invoiceModel.setCurrentInvoice(invoice);
 		return "show-item-view";
 	}
-	
-	public String deleteSelectedInvoice(Invoice invoice){
+
+	public String deleteSelectedInvoice(Invoice invoice) {
 		invoiceModel.setCurrentInvoice(invoice);
 		invoiceRepo.delete(invoiceModel.getCurrentInvoice());
 		return "show-invoices";
 	}
-	
-	public String editInvoice(Invoice invoice){
+
+	public String editInvoice(Invoice invoice) {
 		invoiceModel.setCurrentInvoice(invoice);
 		return "edit-invoice";
 	}
@@ -79,6 +90,14 @@ public class NewInvoiceBean {
 
 	public List<Invoice> getInvoiceList() {
 		return invoiceRepo.findAll();
+	}
+
+	public ChartView getCw() {
+		return cw;
+	}
+
+	public void setCw(ChartView cw) {
+		this.cw = cw;
 	}
 
 }

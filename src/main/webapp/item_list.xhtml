@@ -29,6 +29,8 @@
 					<h:outputText value="#{item.totalPrice} &#8364;" />
 				</p:column>
 			</p:dataTable>
+			<br/>
+			<p:chart type="bar" model="#{newInvoiceBean.chart(invoiceModel.currentInvoice)}" style="height:300px"/>
 		</h:form>
 	</ui:define>
 </ui:composition>
